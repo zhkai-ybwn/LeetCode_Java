@@ -17,7 +17,7 @@ public class App {
     public static Logger logger = Logger.getLogger(App.class);
 
     public static void main(String[] args) throws IOException {
-        maxWealthTest();
+        findRepeatNumberTest();
     }
 
     public static void twoNumSumTest() {
@@ -86,8 +86,8 @@ public class App {
         logger.info(Arrays.toString(resultThree));
     }
 
-    public static void maxWealthTest(){
-        int[][] accounts = {{1,2,3},{1,4,5},{1,4,7}};
+    public static void maxWealthTest() {
+        int[][] accounts = {{1, 2, 3}, {1, 4, 5}, {1, 4, 7}};
         long start = System.nanoTime();
         int result = MaximumWealth.maxWealth(accounts);
         logger.info(System.nanoTime() - start + "ns");
@@ -96,5 +96,33 @@ public class App {
         int resultTwo = MaximumWealth.maxWealthTwo(accounts);
         logger.info(System.nanoTime() - startTwo + "ns");
         logger.info(resultTwo);
+    }
+
+    public static void findRepeatNumberTest() {
+        int[] nums = {2, 3, 1, 0, 2, 5, 3};
+        long start = System.nanoTime();
+        int result = FindRepeatNumber.findRepeatNumber(nums);
+        logger.info(System.nanoTime() - start + "ns");
+        logger.info(result);
+
+        long startTwo = System.nanoTime();
+        int resultTwo = FindRepeatNumber.findRepeatNumberTwo(nums);
+        logger.info(System.nanoTime() - startTwo);
+        logger.info(resultTwo);
+
+        long startThree = System.nanoTime();
+        int resultThree = FindRepeatNumber.findRepeatNumberThree(nums);
+        logger.info(System.nanoTime() - startThree);
+        logger.info(resultThree);
+
+        long startFour = System.nanoTime();
+        int resultFour = FindRepeatNumber.findRepeatNumberFour(nums);
+        logger.info(System.nanoTime() - startFour);
+        logger.info(resultFour);
+
+        long startFive = System.nanoTime();
+        int resultFive = FindRepeatNumber.findRepeatNumberFive(nums);
+        logger.info(System.nanoTime() - startFive);
+        logger.info(resultFive);
     }
 }
