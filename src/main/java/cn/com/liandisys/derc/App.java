@@ -17,7 +17,7 @@ public class App {
     public static Logger logger = Logger.getLogger(App.class);
 
     public static void main(String[] args) throws IOException {
-        findRepeatNumberTest();
+        findNumberInTwoDimenArrayTest();
     }
 
     public static void twoNumSumTest() {
@@ -124,5 +124,19 @@ public class App {
         int resultFive = FindRepeatNumber.findRepeatNumberFive(nums);
         logger.info(System.nanoTime() - startFive);
         logger.info(resultFive);
+    }
+
+    public static void findNumberInTwoDimenArrayTest(){
+        int[][] matrix = {{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+        int target = 5;
+        long start = System.nanoTime();
+        boolean result = FindNumberInTwoDimenArray.findNumberInTwoDimenArray(matrix, target);
+        logger.info(System.nanoTime() - start);
+        logger.info(result);
+
+        long startTwo = System.nanoTime();
+        boolean resultTwo = FindNumberInTwoDimenArray.findNumberInTwoDimenArrayTwo(matrix, target);
+        logger.info(System.nanoTime() - startTwo);
+        logger.info(resultTwo);
     }
 }
