@@ -1,5 +1,7 @@
 package cn.com.liandisys.derc.LeetCode;
 
+import org.apache.log4j.Logger;
+
 import java.util.HashMap;
 
 /**
@@ -8,6 +10,18 @@ import java.util.HashMap;
  */
 public class TwoNumSum {
     private final static int NUM_NUMS = 2;
+    public static Logger logger = Logger.getLogger(TwoNumSum.class);
+
+    public static void twoNumSumTest() {
+        int[] nums = {1, 3, 5, 7, 9, 12, 13, 19, 20};
+        int target = 23;
+        long start = System.nanoTime();
+        int[] result = TwoNumSum.twoNumSum(nums, target);
+        logger.info(System.nanoTime() - start + "ns");
+        long startMap = System.nanoTime();
+        int[] resultMap = TwoNumSum.twoNumSumMap(nums, target);
+        logger.info(System.nanoTime() - startMap + "ns");
+    }
 
     /**
      * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标

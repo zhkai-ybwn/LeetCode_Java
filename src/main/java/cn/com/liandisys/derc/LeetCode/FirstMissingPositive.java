@@ -1,10 +1,28 @@
 package cn.com.liandisys.derc.LeetCode;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author zhkai
  * @date 2021年3月29日13:51:23
  */
 public class FirstMissingPositive {
+
+    public static Logger logger = Logger.getLogger(FirstMissingPositive.class);
+
+    /**
+     * 测试方法
+     */
+    public static void firstMissingPositiveTest() {
+        int[] nums = {1, 3, 6, 7, 9};
+        long start = System.nanoTime();
+        int result = FirstMissingPositive.firstMissingPositive(nums);
+        logger.info(System.nanoTime() - start + "ns");
+        long startTwo = System.nanoTime();
+        int resultTwo = FirstMissingPositive.firstMissingPositiveTwo(nums);
+        logger.info(System.nanoTime() - startTwo + "ns");
+    }
+
     /**
      * 给你一个未排序的整数数组 nums，请你找出其中没有出现的最小的正整数
      *
@@ -59,8 +77,8 @@ public class FirstMissingPositive {
      * 交换数组元素位置
      *
      * @param nums 未排序的整数数组 nums
-     * @param i 需交换元素数组index
-     * @param j 与需交换元素进行交换的数组index
+     * @param i    需交换元素数组index
+     * @param j    与需交换元素进行交换的数组index
      */
     public static void swap(int[] nums, int i, int j) {
         if (i != j) {

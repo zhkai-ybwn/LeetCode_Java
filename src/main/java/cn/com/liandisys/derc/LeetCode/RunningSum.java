@@ -1,5 +1,7 @@
 package cn.com.liandisys.derc.LeetCode;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 
 /**
@@ -7,6 +9,27 @@ import java.util.Arrays;
  * @date 2021年3月31日10:07:10
  */
 public class RunningSum {
+    public static Logger logger = Logger.getLogger(RunningSum.class);
+
+    /**
+     * 测试方法
+     */
+    public static void runningSumTest() {
+        int[] nums = {1, 2, 3, 4};
+        long start = System.nanoTime();
+        int[] result = RunningSum.runningSum(nums);
+        logger.info(System.nanoTime() - start + "ns");
+        logger.info(Arrays.toString(result));
+        long startTwo = System.nanoTime();
+        int[] resultTwo = RunningSum.runningSumTwo(nums);
+        logger.info(System.nanoTime() - startTwo);
+        logger.info(Arrays.toString(resultTwo) + "ns");
+        long startThree = System.nanoTime();
+        int[] resultThree = RunningSum.runningSumThree(nums);
+        logger.info(System.nanoTime() - startThree);
+        logger.info(Arrays.toString(resultThree));
+    }
+
     /**
      * 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。
      * 请返回 nums 的动态和

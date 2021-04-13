@@ -1,10 +1,29 @@
 package cn.com.liandisys.derc.LeetCode;
 
+import org.apache.log4j.Logger;
+
 /**
  * @author zhkai
  * @date 2021年3月25日09:44:06
  */
 public class RemoveElement {
+
+    public static Logger logger = Logger.getLogger(RemoveElement.class);
+
+    /**
+     * 测试方法
+     */
+    public static void removeElementTest() {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int val = 2;
+        long start = System.nanoTime();
+        RemoveElement.removeElement(nums, val);
+        logger.info(System.nanoTime() - start + "ns");
+        long startTwo = System.nanoTime();
+        RemoveElement.removeElementTwo(nums, val);
+        logger.info(System.nanoTime() - startTwo + "ns");
+    }
+
     /**
      * 给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
      * 不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
