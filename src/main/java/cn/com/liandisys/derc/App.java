@@ -1,6 +1,5 @@
 package cn.com.liandisys.derc;
 
-import cn.com.liandisys.derc.LeetCode.*;
 import org.apache.log4j.Logger;
 
 
@@ -13,11 +12,7 @@ import org.apache.log4j.Logger;
 public class App {
     public static Logger logger = Logger.getLogger(App.class);
 
-    public static void main(String[] args) {
-        logger.info("Test start");
-        ReplaceSpace.replaceSpaceTest();
-        logger.info("Test end");
+    public static void main(String[] args){
     }
-
 
 }
